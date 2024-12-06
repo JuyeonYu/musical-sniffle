@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:mike_list/song.dart';
 import 'package:mike_list/splash_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyApp extends StatefulWidget {
+  MyApp({super.key});
 
+  late Future<List<Song>> songs;
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+  
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
